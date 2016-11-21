@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="ags.css">
+    <script src="vendor/requirejs/require.js"></script>
+    <script src="ags.js"></script>
+    <script>
+
+        require([
+            "js/core/init",
+            "js/events/ready"
+        ], function () {
+            $AGS.init().ready(function () {
+
+
+
+                /* VERSION 1 - easy to use */
+
+                $AGS.newContainer().addRow(
+                    $AGS.newRow().cols([
+                        $AGS.newCol().lg(3).md(6).sm(6).xs(12).content('<div style="background-color:red">easy red box</div>'),
+                        $AGS.newCol().lg(3).md(6).sm(6).xs(12).content('<div style="background-color:blue">easy blue box</div>'),
+                        $AGS.newCol().lg(3).md(6).sm(12).xs(12).content('<div style="background-color:green">easy green box</div>'),
+                        $AGS.newCol().lg(3).md(6).sm(12).xs(12).content('<div style="background-color:pink">easy pink box</div>')
+                    ])
+                ).drawTo('body');
+
+
+
+                /* VERSION 2 - special use */
+
+                var container = $AGS.newContainer().fluid(false).drawTo('body');
+
+                var row = $AGS.newRow().drawTo(container);
+
+                var col1 = $AGS.newCol().lg({
+                    size:3,
+                    push:2
+                }).md({
+                    size:6,
+                    offset:0
+                }).sm({
+                    size:4,
+                    offset:2
+                }).xs(12).content('<div style="background-color:red">special red box</div>').drawTo(row);
+
+                var col2 = $AGS.newCol().lg({
+                    size:3,
+                    push:4
+                }).md(6).sm(4).xs(12).content('<div style="background-color:blue">special blue box</div>').drawTo(row);
+
+                var col3 = $AGS.newCol().lg({
+                    size:8,
+                    offset:2
+                }).md(6).sm(12).xs(12).content('<div style="background-color:green">special green box</div>').drawTo(row);
+
+                var col4 = $AGS.newCol().lg({
+                    size:12,
+                    offset:2,
+                    pull:2
+                }).md(6).sm(12).xs({
+                    hidden:true
+                }).content('<div style="background-color:pink">special pink box</div>').drawTo(row);
+
+
+
+            })
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
