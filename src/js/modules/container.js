@@ -23,7 +23,7 @@ define([
             if(rows[i] instanceof $AGS.m.Row){
                 rows[i].drawTo(t.d.$widget);
             }else if(typeof rows[i] === 'array' || typeof rows[i] === 'object'){
-                $AGS.newContainer(rows[i]).drawTo(t.d.$widget);
+                $AGS.newCol(rows[i]).drawTo(t.d.$widget);
             }
         }
         return t;
