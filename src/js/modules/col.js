@@ -5,28 +5,28 @@ define([
         var t = this;
         t.d = {
             xs: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
                 hidden: false
             },
             sm: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
                 hidden: false
             },
             md: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
                 hidden: false
             },
             lg: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
@@ -42,7 +42,7 @@ define([
 
     p.reClassType = function (type) {
         var t = this;
-        if (t.d[type].size !== 0) {
+        if (t.d[type].size !== false) {
             t.d.$widget.addClass('ags-col-' + type + ' ags-col-' + type + '-' + t.d[type].size);
         }
         if (t.d[type].offset !== false) {

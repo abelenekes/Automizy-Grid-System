@@ -163,7 +163,7 @@
             if(rows[i] instanceof $AGS.m.Row){
                 rows[i].drawTo(t.d.$widget);
             }else if(typeof rows[i] === 'array' || typeof rows[i] === 'object'){
-                $AGS.newContainer(rows[i]).drawTo(t.d.$widget);
+                $AGS.newCol(rows[i]).drawTo(t.d.$widget);
             }
         }
         return t;
@@ -246,7 +246,7 @@
             if(cols[i] instanceof $AGS.m.Col){
                 cols[i].drawTo(t.d.$widget);
             }else if(typeof cols[i] === 'array' || typeof cols[i] === 'object'){
-                $AGS.newRow(cols[i]).drawTo(t.d.$widget);
+                $AGS.newCol(cols[i]).drawTo(t.d.$widget);
             }
         }
         return t;
@@ -298,28 +298,28 @@
         var t = this;
         t.d = {
             xs: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
                 hidden: false
             },
             sm: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
                 hidden: false
             },
             md: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
                 hidden: false
             },
             lg: {
-                size: 12,
+                size: false,
                 offset: false,
                 pull: false,
                 push: false,
@@ -335,7 +335,7 @@
 
     p.reClassType = function (type) {
         var t = this;
-        if (t.d[type].size !== 0) {
+        if (t.d[type].size !== false) {
             t.d.$widget.addClass('ags-col-' + type + ' ags-col-' + type + '-' + t.d[type].size);
         }
         if (t.d[type].offset !== false) {
