@@ -29,6 +29,17 @@ define([
         return t;
     };
 
+    /*Setting the space between rows*/
+    p.margin = function (margin) {
+      var t = this;
+        if(typeof margin !== 'undefined'){
+            t.d.margin = margin;
+
+            return t;
+        }
+        else return t.d.margin;
+    };
+
     p.content = function (content) {
         var t = this;
         if (typeof content !== 'undefined') {

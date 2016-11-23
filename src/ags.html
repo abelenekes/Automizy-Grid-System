@@ -16,7 +16,7 @@
 
                 /* VERSION 1 - easy to use */
 
-                $AGS.newContainer().addRow(
+                container1 = $AGS.newContainer().addRow(
                     $AGS.newRow().cols([
                         $AGS.newCol().lg(3).md(6).sm(6).xs(12).content('<div style="background-color:red">easy red box</div>'),
                         $AGS.newCol().lg(3).md(6).sm(6).xs(12).content('<div style="background-color:blue">easy blue box</div>'),
@@ -29,9 +29,9 @@
 
                 /* VERSION 2 - special use */
 
-                var container = $AGS.newContainer().fluid(false).drawTo('body');
+                container2 = $AGS.newContainer().fluid(false).drawTo('body');
 
-                var row = $AGS.newRow().drawTo(container);
+                var row = $AGS.newRow().drawTo(container2);
 
                 var col1 = $AGS.newCol().lg({
                     size:3,

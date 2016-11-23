@@ -4,7 +4,9 @@ define([
     var Container = function () {
         var t = this;
         t.d = {
-            fluid:true
+            fluid:true,
+            rowSpacing: 10,
+            colPadding: 10
         };
 
         t.d.$widget = $('<div class="ags-container ags-container-fluid"></div>');
@@ -40,6 +42,30 @@ define([
             return t;
         }
         return t.d.fluid;
+    };
+
+    p.rowSpacing = function(rowSpace){
+        var t = this;
+        if(typeof rowSpace !== 'undefined'){
+            t.d.$widget.removeClass('ags-rowspace-'+t.d.rowSpacing);
+            t.d.rowSpacing = rowSpace;
+            t.d.$widget.addClass('ags-rowspace-'+rowSpace);
+            return t;
+        }
+        else return t.d.rowSpacing;
+
+    };
+    
+    p.colPadding = function(colSpace){
+        var t = this;
+        if(typeof colSpace !== 'undefined'){
+            t.d.$widget.removeClass('ags-colpad-'+t.d.colPadding);
+            t.d.colPadding = colSpace;
+            t.d.$widget.addClass('ags-colpad-'+colSpace);
+            return t;
+        }
+        else return t.d.colPadding;
+
     };
 
     p.content = function (content) {
