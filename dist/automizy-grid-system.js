@@ -145,6 +145,7 @@
         var t = this;
         t.d = {
             fluid:true,
+            visible: true,
             rowSpacing: 10,
             colPadding: 10
         };
@@ -227,9 +228,11 @@
         }
         return t.d.content;
     };
+
     p.widget = function () {
         return this.d.$widget;
     };
+
     p.draw = p.drawTo = function (target) {
         var t = this;
         var target = target || $('body').eq(0);
@@ -239,6 +242,34 @@
             t.d.$widget.appendTo(target);
         }
         return t;
+    };
+
+    p.visible = function (visible) {
+        var t = this;
+
+        if (typeof visible !== 'undefined'){
+            var visible = !!visible;
+            t.d.visible = visible;
+
+            if(visible){
+                t.show();
+            }
+            else{
+                t.hide();
+            }
+            return t;
+        }
+        return t.d.visible;
+    };
+
+    p.hide = function () {
+        var t = this;
+        t.d.$widget.addClass('automizy-hide');
+    };
+
+    p.show = function () {
+        var t = this;
+        t.d.$widget.removeClass('automizy-hide');
     };
 
     $AGS.m.Container = Container;
@@ -253,7 +284,7 @@
     var Row = function () {
         var t = this;
         t.d = {
-
+            visible: true
         };
 
         t.d.$widget = $('<div class="ags-row"></div>');
@@ -322,6 +353,34 @@
         return t;
     };
 
+    p.visible = function (visible) {
+        var t = this;
+
+        if (typeof visible !== 'undefined'){
+            var visible = !!visible;
+            t.d.visible = visible;
+
+            if(visible){
+                t.show();
+            }
+            else{
+                t.hide();
+            }
+            return t;
+        }
+        return t.d.visible;
+    };
+
+    p.hide = function () {
+        var t = this;
+        t.d.$widget.addClass('automizy-hide');
+    };
+
+    p.show = function () {
+        var t = this;
+        t.d.$widget.removeClass('automizy-hide');
+    };
+
     $AGS.m.Row = Row;
     $AGS.newRow = function () {
         return new $AGS.m.Row();
@@ -361,7 +420,8 @@
                 pull: false,
                 push: false,
                 hidden: false
-            }
+            },
+            visible: true
         };
 
         t.d.$widget = $('<div class="ags-col"></div>');
@@ -544,6 +604,35 @@
             t.d.$widget.appendTo(target);
         }
         return t;
+    };
+
+
+    p.visible = function (visible) {
+        var t = this;
+
+        if (typeof visible !== 'undefined'){
+            var visible = !!visible;
+            t.d.visible = visible;
+
+            if(visible){
+                t.show();
+            }
+            else{
+                t.hide();
+            }
+            return t;
+        }
+        return t.d.visible;
+    };
+
+    p.hide = function () {
+        var t = this;
+        t.d.$widget.addClass('automizy-hide');
+    };
+
+    p.show = function () {
+        var t = this;
+        t.d.$widget.removeClass('automizy-hide');
     };
 
     $AGS.m.Col = Col;

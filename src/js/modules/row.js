@@ -4,7 +4,7 @@ define([
     var Row = function () {
         var t = this;
         t.d = {
-
+            visible: true
         };
 
         t.d.$widget = $('<div class="ags-row"></div>');
@@ -71,6 +71,34 @@ define([
             t.d.$widget.appendTo(target);
         }
         return t;
+    };
+
+    p.visible = function (visible) {
+        var t = this;
+
+        if (typeof visible !== 'undefined'){
+            var visible = !!visible;
+            t.d.visible = visible;
+
+            if(visible){
+                t.show();
+            }
+            else{
+                t.hide();
+            }
+            return t;
+        }
+        return t.d.visible;
+    };
+
+    p.hide = function () {
+        var t = this;
+        t.d.$widget.addClass('automizy-hide');
+    };
+
+    p.show = function () {
+        var t = this;
+        t.d.$widget.removeClass('automizy-hide');
     };
 
     $AGS.m.Row = Row;
