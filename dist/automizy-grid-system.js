@@ -265,11 +265,13 @@
     p.hide = function () {
         var t = this;
         t.d.$widget.addClass('automizy-hide');
+        return t;
     };
 
     p.show = function () {
         var t = this;
         t.d.$widget.removeClass('automizy-hide');
+        return t;
     };
 
     $AGS.m.Container = Container;
@@ -374,11 +376,13 @@
     p.hide = function () {
         var t = this;
         t.d.$widget.addClass('automizy-hide');
+        return t;
     };
 
     p.show = function () {
         var t = this;
         t.d.$widget.removeClass('automizy-hide');
+        return t;
     };
 
     $AGS.m.Row = Row;
@@ -628,11 +632,13 @@
     p.hide = function () {
         var t = this;
         t.d.$widget.addClass('automizy-hide');
+        return t;
     };
 
     p.show = function () {
         var t = this;
         t.d.$widget.removeClass('automizy-hide');
+        return t;
     };
 
     $AGS.m.Col = Col;
