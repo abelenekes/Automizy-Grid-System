@@ -36,6 +36,8 @@
     padding-left: 15px;
     padding-right: 15px;
     box-sizing: border-box;
+    float: left;
+    width: 100%;
 }
 .ags-col-xs {
     float: left;
