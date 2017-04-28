@@ -146,11 +146,14 @@
         t.d = {
             fluid:true,
             visible: true,
-            rowSpacing: 10,
+            rowSpacing: 20,
             colPadding: 10
         };
 
         t.d.$widget = $('<div class="ags-container ags-container-fluid"></div>');
+
+        t.rowSpacing(t.d.rowSpacing);
+        t.colPadding(t.d.colPadding);
 
     };
 
